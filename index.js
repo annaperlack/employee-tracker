@@ -116,7 +116,7 @@ function addRole() {
         .prompt([
             {
                 type: 'input',
-                name: 'roleName',
+                name: 'title',
                 message: 'What is the role?'
             },
             {
@@ -126,12 +126,20 @@ function addRole() {
             },
             {
                 type: 'input',
-                name: 'roleId',
+                name: 'department_id',
                 message: 'What is the ID associated with this role?'
             },
         ])
         .then((answers) => {
             console.log(answers)
+            const sql = `INSERT INTO roles SET ?`;
+            db.query(sql, answers, (err, result) => {
+                if (err) {
+                    throw err
+                }
+                console.table(result);
+                promptQuestions();
+            });
         })
 };
 
@@ -140,32 +148,39 @@ function addEmployee() {
         .prompt([
             {
                 type: 'input',
-                name: 'firstName',
+                name: 'first_name',
                 message: 'What is the first name of the employee?'
             },
             {
                 type: 'input',
-                name: 'lastName',
+                name: 'last_name',
                 message: 'What is the last name of the employee?'
             },
             {
                 type: 'input',
-                name: 'roleId',
+                name: 'role_id',
                 message: 'What is the role ID of the employee?'
             },
             {
                 type: 'input',
-                name: 'manager',
+                name: 'manager_id',
                 message: 'Who is the manager of the employee?'
             },
         ])
         .then((answers) => {
             console.log(answers)
+            const sql = `INSERT INTO employees SET ?`;
+            db.query(sql, answers, (err, result) => {
+                if (err) {
+                    throw err
+                }
+                console.table(result);
+                promptQuestions();
+            });
         })
 };
 
 function updateEmployee() {
-    // find employee by ID and update role ID colum
     inquirer
         .prompt([
             {
