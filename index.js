@@ -37,22 +37,28 @@ function promptQuestions() {
 
         ])
         .then((answers) => {
-            if (answers.choices == 'departments') {
-                viewDepartments()
-            } else if (answers.choices == 'roles') {
-                viewRoles()
-            } else if (answers.choices == 'employees') {
-                viewEmployees()
-            } else if (answers.choices == 'addDepartment') {
-                addDepartment()
-            } else if (answers.choices == 'addRole') {
-                addRole()
-            } else if (answers.choices == 'addEmployee') {
-                addEmployee()
-            } else if (answers.choices == 'updateEmployee') {
-                updateEmployee()
-            } else {
-
+            switch (answers.choices) {
+                case "departments":
+                    viewDepartments()
+                    break;
+                case "roles":
+                    viewRoles()
+                    break;
+                case "employees":
+                    viewEmployees()
+                    break;
+                case "addDepartment":
+                    addDepartment()
+                    break;
+                case "addRole":
+                    addRole()
+                    break;
+                case "addEmployee":
+                    addEmployee()
+                    break;
+                case "updateEmployee":
+                    updateEmployee()
+                    break;
             }
         });
 };
