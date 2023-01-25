@@ -5,13 +5,14 @@ VALUES (1, 'Human Medical Staff'),
        (4, 'Support Staff');
 
 INSERT INTO roles (id, title, salary, department_id) 
-VALUES (1, 'Surgeon', 300000, 001),
-       (2, 'Nurse Practitioner', 200000, 002),
-       (3, 'Physical Therapist', 80000, 003);
+VALUES (10, 'Surgeon', 350000, 1),
+       (11, 'Nurse', 70000, 2),
+       (12, 'Physical Therapist', 80000, 3),
+       (13, 'House Keeper', 40000, 4);
         
-
 INSERT INTO employees (id, first_name, last_name, role_id, manager_id) 
-VALUES (1, 'Robert', 'Smith', 1, 1),
-       (2, 'Karen', 'Edwards', 2, 2),
-       (3, 'Fred', 'Jones', 3, 3);
+VALUES (14, 'Robert', 'Smith', 10, 18),
+       (15, 'Karen', 'Edwards', 11, 19),
+       (16, 'Fred', 'Jones', 12, 20),
+       (17, 'Susan', 'Brooks', 13, 21);
       
