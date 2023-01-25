@@ -12,7 +12,7 @@ N/A
 
 This application allows a user to view the departments, roles, and employees of a company. It also allows a users to add and update department, role, and employee information as needed.
 
-[![Watch the demonstration video](https://youtu.be/kzgbRh_V9F8)
+[Watch the demonstration video](https://youtu.be/kzgbRh_V9F8)
 
 ## Credits
 
